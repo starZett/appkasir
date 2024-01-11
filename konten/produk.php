@@ -30,6 +30,7 @@
             <table  id="example1" class="table table-hover">
                 <thead class="bg-blue">
                     <th>ID</th>
+                    <th>Barcode</th>
                     <th>Nama Produk</th>
                     <th>Harga Produk</th>
                     <th>Stok Produk</th>
@@ -43,8 +44,9 @@
 
                     <tr>
                         <td><?= $kolom['ProdukID']; ?></td>
+                        <td><?= $kolom['Barcode']; ?></td>
                         <td><?= $kolom['NamaProduk']; ?></td>
-                        <td><?= $kolom['Harga']; ?></td>
+                        <td><?= number_format($kolom['Harga']); ?></td>
                         <td><?= $kolom['Stok']; ?></td>
                         <td> 
                           <a href="aksi/produk.php" data-toggle="modal" data-target="#modalubah<?= $kolom['ProdukID']; ?>"><i class="fas fa-edit"></i>
@@ -68,12 +70,14 @@
         <form action="aksi/produk.php" method="post">
             <input type="hidden" name="aksi" value="ubah">
             <input type="hidden" name="produkid" value="<?=$kolom['ProdukID']; ?>">
-
+            <label for="barcode">Barcode</label>
+            <input type="text" name="barcode" value="<?=$kolom['Barcode']; ?>" class="form-control" required>
+            <br>
             <label for="namaproduk">Nama Produk</label>
             <input type="text" name="namaproduk" value="<?=$kolom['NamaProduk']; ?>" class="form-control" required>
             <br>
             <label for="harga">Harga Produk</label>
-            <input type="number" name="harga" value="<?=$kolom['Harga']; ?>" class="form-control" required>
+            <input type="number" name="harga" value="<?= $kolom['Harga']; ?>" class="form-control" required>
             <br>
             <label for="stok">Stok Produk</label>
             <input type="number" name="stok" value="<?=$kolom['Stok']; ?>" class="form-control" required>
@@ -116,6 +120,9 @@
       <div class="modal-body">
         <form action="aksi/produk.php" method="post">
             <input type="hidden" name="aksi" value="tambah">
+            <label for="barcode">Barcode</label>
+            <input type="text" name="barcode" class="form-control" required>
+            <br>
             <label for="namaproduk">Nama Produk</label>
             <input type="text" name="namaproduk" class="form-control" required>
             <br>

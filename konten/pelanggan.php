@@ -124,7 +124,7 @@
             <br>
             <textarea name="alamat" id="" cols="50" rows="3" class="form-control"></textarea>
             <br>
-            <label for="nomortelepon">NomorTelepon</label>
+            <label for="nomortelepon">Nomor Telepon</label>
             <input type="text" name="nomortelepon" class="form-control" required>
             <br>
             <button type="submit" class="btn btn-block bg-blue"> <i class="fas fa-save"></i> Simpan </button>
